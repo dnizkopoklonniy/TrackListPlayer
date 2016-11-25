@@ -85,10 +85,13 @@ public class MainActivity extends AppCompatActivity {
         List<String> trackUrl = new ArrayList<>();
         List<Uri> trackUri = new ArrayList<>();
 
-        trackId.add(111544);
-        trackId.add(111582);
-        trackId.add(111603);
-        trackId.add(111604);
+//        trackId.add(111544);
+//        trackId.add(111582);
+//        trackId.add(111603);
+//        trackId.add(111604);
+
+        trackId.add(142332);
+        trackId.add(143946);
 
         for (int id: trackId) {
             String url = SongUtil.getUrl(id);
