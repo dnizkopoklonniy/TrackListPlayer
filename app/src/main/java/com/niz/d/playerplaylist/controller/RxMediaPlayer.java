@@ -67,15 +67,8 @@ public class RxMediaPlayer {
 
     static @NotNull Observable<MediaPlayer> prepare(@NotNull MediaPlayer mp) {
         return Observable.create(subscriber -> {
-            try {
-                mp.prepare();
-                subscriber.onNext(mp);
-                subscriber.onCompleted();
-            } catch (IOException e) {
-                mp.reset();
-                mp.release();
-                subscriber.onError(e);
-            }
+            subscriber.onNext(mp);
+            subscriber.onCompleted();
         });
     }
 

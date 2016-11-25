@@ -47,6 +47,17 @@ public class Controller implements PlayerControllerInterface{
 
         model.setTime(0);
         model.setDuration(duration);
+
+        players.clear();
+        for (int i = 0; i< model.getTracks().size(); i++) {
+            MediaPlayer player = createPlayer(model.getTracks().get(i));
+            try {
+                player.prepare();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            players.add(player);
+        }
     }
 
     private MediaPlayer createPlayer(Uri uri) {

@@ -62,6 +62,7 @@ public class MainActivity extends AppCompatActivity {
         controller = new Controller(context, view, model);
 
         action.setOnClickListener(view->{
+            controller.press();
         });
     }
 
